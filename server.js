@@ -22,4 +22,9 @@ io.sockets.on('connection', function(socket){
 		console.log('Disconnected: %s Sockets connected', connections.length);
 	});
 	
+	//Message
+	
+	socket.on('send message', function(data){
+		io.sockets.emit('new message', {msg: data});
+	});
 });
